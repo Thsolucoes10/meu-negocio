@@ -204,21 +204,37 @@
 
         <!-- Seção Minha História -->
         <div class="section story">
-            <h2>Como Comecei no Ramo</h2>
-            <p>Comecei a trabalhar com vendas de canais, atualização de sistemas e manutenção de antenas há mais de 5 anos. Percebi a crescente demanda por soluções de TV acessíveis e de qualidade, e resolvi investir nesse setor.</p>
+            <h2>Curiosidades</h2>
+            <p> “Com ampla experiência no mercado de entretenimento digital e telecomunicações, atuo há 3 anos na venda de canais de TV, manutenção de antenas e comercialização de equipamentos de última geração. Ofereço soluções completas e personalizadas para clientes que buscam qualidade em transmissão e confiabilidade nos serviços técnicos, garantindo a melhor experiência em conectividade e entretenimento.”</p>
         </div>
 
         <!-- Seção de Teste Grátis -->
-        <div class="section test-gratis">
-            <h2>Teste Grátis</h2>
-            <p>Quer experimentar nossos serviços antes de fechar o plano? Solicite seu teste grátis preenchendo o formulário abaixo:</p>
-            <form>
-                <input type="text" placeholder="Nome" required>
-                <input type="celular" placeholder="Celular" required>
-                <textarea placeholder="Escreva sua mensagem ou solicitação" required></textarea>
-                <button type="submit">Solicitar Teste Grátis</button>
-            </form>
-        </div>
+<div class="section test-gratis">
+    <h2>Teste Grátis</h2>
+    <p>Quer experimentar nossos serviços antes de fechar o plano? Solicite seu teste grátis preenchendo o formulário abaixo:</p>
+    <form id="teste-gratis-form" onsubmit="enviarTesteGratis(event)">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="tel" id="celular" placeholder="Celular" required>
+        <textarea id="mensagem" placeholder="Escreva sua mensagem ou solicitação" required></textarea>
+        <button type="submit">Solicitar Teste Grátis</button>
+    </form>
+</div>
+
+<script>
+    function enviarTesteGratis(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        const nome = document.getElementById('nome').value;
+        const celular = document.getElementById('celular').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const numeroWhatsApp = '5531971290448';
+        const textoWhatsApp = `Olá, gostaria de solicitar o teste grátis.\nNome: ${nome}\nCelular: ${celular}\nMensagem: ${mensagem}`;
+
+        // Redireciona para o WhatsApp com a mensagem preenchida
+        window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoWhatsApp)}`, '_blank');
+    }
+</script>
+
 
         <!-- Seção de Formas de Pagamento -->
         <div class="section payment">
